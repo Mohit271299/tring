@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:tring/screens/initialization/estimate_details.dart';
 
 class estimateScreen extends StatefulWidget {
@@ -301,151 +302,156 @@ class _estimateScreenState extends State<estimateScreen> {
     );
   }
 
-  void add_estimate(){
+  void add_estimate() {
     showModalBottomSheet(
-
         context: context,
-        builder: (context){
-      return Container(
-        color: Color(0xff737373),
-        child: Container(
-          height: 640,
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        builder: (context) {
+          return Container(
+            color: Color(0xff737373),
+            child: Container(
+              height: 640,
+              child: Column(
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 20,left: 25),
-                    child: Text(
-                      'Select Customer',
-                      style: TextStyle(
-                          fontSize: 17,
-                          fontFamily: 'GR',
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xff0B0D16),
-                          decoration: TextDecoration.none),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 23,right: 25),
-                    child: Text('Add New Customer', style: TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'GR',
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xff007DEF),
-                        decoration: TextDecoration.none),),
-                  ),
-
-                ],
-              ),
-              Container(
-                height: 34,
-                margin: const EdgeInsets.only(
-                    right: 25, top: 16, left: 25,bottom: 21),
-                decoration: BoxDecoration(
-                  color: Color(0xfff3f3f3),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      margin:
-                      EdgeInsets.fromLTRB(12, 10, 10, 10),
-                      child: SvgPicture.asset(
-                        'assets1/Vector_search.svg',
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        child: TextFormField(
-                          textAlignVertical:
-                          TextAlignVertical.top,
-                          // controller: emailController,
-                          decoration: const InputDecoration(
-                            contentPadding: EdgeInsets.only(
-                                bottom: 14, top: 14),
-                            hintText: 'Search Here',
-                            hintStyle: TextStyle(
-                              color: Color(0xff9d9d9d),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 20, left: 25),
+                        child: Text(
+                          'Select Customer',
+                          style: TextStyle(
+                              fontSize: 17,
                               fontFamily: 'GR',
-                              fontSize: 12.0,
-                            ),
-                            border: InputBorder.none,
-                          ),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 12.0,
-                          ),
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff0B0D16),
+                              decoration: TextDecoration.none),
                         ),
                       ),
+                      Container(
+                        margin: EdgeInsets.only(top: 23, right: 25),
+                        child: Text(
+                          'Add New Customer',
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'GR',
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff007DEF),
+                              decoration: TextDecoration.none),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    height: 34,
+                    margin: const EdgeInsets.only(
+                        right: 25, top: 16, left: 25, bottom: 21),
+                    decoration: BoxDecoration(
+                      color: Color(0xfff3f3f3),
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  physics: AlwaysScrollableScrollPhysics(),
-                  itemCount: item_index.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Color(0xffe8e8e8),width: 2),
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15)),
-                      margin: EdgeInsets.only(left: 25,right: 25,bottom: 15),
-                      child: Container(
-                        margin: EdgeInsets.symmetric(vertical: 18,horizontal: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            GestureDetector(
-                              onTap: (){
-                                Navigator.of(context).pop();
-                                Navigator.of(context).push(_createRoute());
-                              },
-                              child: Text(
-                                  customer_name[index],
-                                  style: TextStyle(
-                                      color:
-                                      Color(0xff0B0D16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.fromLTRB(12, 10, 10, 10),
+                          child: SvgPicture.asset(
+                            'assets1/Vector_search.svg',
+                            height: 20,
+                            width: 20,
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            child: TextFormField(
+                              textAlignVertical: TextAlignVertical.top,
+                              // controller: emailController,
+                              decoration: const InputDecoration(
+                                contentPadding:
+                                    EdgeInsets.only(bottom: 14, top: 14),
+                                hintText: 'Search Here',
+                                hintStyle: TextStyle(
+                                  color: Color(0xff9d9d9d),
+                                  fontFamily: 'GR',
+                                  fontSize: 12.0,
+                                ),
+                                border: InputBorder.none,
+                              ),
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 12.0,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
+                      physics: AlwaysScrollableScrollPhysics(),
+                      itemCount: item_index.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Color(0xffe8e8e8), width: 2),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15)),
+                          margin:
+                              EdgeInsets.only(left: 25, right: 25, bottom: 15),
+                          child: Container(
+                            margin: EdgeInsets.symmetric(
+                                vertical: 18, horizontal: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).pop();
+                                    Navigator.push(
+                                        context,
+                                        PageTransition(
+                                            child: estimate_details(),
+                                            type:
+                                                PageTransitionType.bottomToTop,
+                                            duration:
+                                                Duration(milliseconds: 500))
+                                    );
+                                  },
+                                  child: Text(customer_name[index],
+                                      style: TextStyle(
+                                          color: Color(0xff0B0D16),
+                                          fontSize: 15,
+                                          fontFamily: 'GR',
+                                          fontWeight: FontWeight.w600)),
+                                ),
+                                Text(phone_number[index],
+                                    style: TextStyle(
+                                      color: Color(0xff9d9d9d),
                                       fontSize: 15,
                                       fontFamily: 'GR',
-                                      fontWeight: FontWeight
-                                          .w600)),
+                                    )),
+                              ],
                             ),
-                            Text(phone_number[index],
-                                style: TextStyle(
-                                    color: Color(0xff9d9d9d),
-                                    fontSize: 15,
-                                    fontFamily: 'GR',)),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              )
-
-            ],
-          ),
-          decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(30),
-              topRight: Radius.circular(30)),
-        ),
-        ),
-
-      );
-        }
-    );
+                          ),
+                        );
+                      },
+                    ),
+                  )
+                ],
+              ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30)),
+              ),
+            ),
+          );
+        });
   }
 
   @override
@@ -746,22 +752,4 @@ class _estimateScreenState extends State<estimateScreen> {
       ),
     );
   }
-}
-Route _createRoute() {
-  return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) =>  estimate_details(),
-    transitionDuration: Duration(milliseconds: 700),
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      const begin = Offset(0.0, 1.0);
-      const end = Offset.zero;
-      const curve = Curves.ease;
-
-      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-
-      return SlideTransition(
-        position: animation.drive(tween),
-        child: child,
-      );
-    },
-  );
 }

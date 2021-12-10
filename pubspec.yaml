@@ -45,6 +45,7 @@ dependencies:
   flutter_svg: ^1.0.0
   flutter_screenutil: ^5.0.1
   page_transition: ^2.0.4
+  auto_size_text_field: ^1.0.1
 
 
 dev_dependencies:

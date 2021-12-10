@@ -1,15 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:tring/screens/initialization/estimate_screen.dart';
+import 'package:tring/screens/initialization/task_activity_screen.dart';
 
 class dashboard extends StatefulWidget {
   @override
   _dashboardState createState() => _dashboardState();
 }
+
 Route _createRoute() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => const estimateScreen(),
+    pageBuilder: (context, animation, secondaryAnimation) =>
+        const estimateScreen(),
     transitionDuration: Duration(milliseconds: 500),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       const begin = Offset(1.0, 0.0);
@@ -31,9 +35,8 @@ class _dashboardState extends State<dashboard> {
   String _startalpha = 'Block - A';
   int _selectedIndex = 0;
 
-  List myProducts = ['A-101','A-102','A-103','A-104'];
-  List myProducts2 = ['A-101','A-102','A-103','A-104','A-105','A-106'];
-
+  List myProducts = ['A-101', 'A-102', 'A-103', 'A-104'];
+  List myProducts2 = ['A-101', 'A-102', 'A-103', 'A-104', 'A-105', 'A-106'];
 
   @override
   Size get preferredSize => Size.fromHeight(34);
@@ -49,225 +52,207 @@ class _dashboardState extends State<dashboard> {
         return Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            margin: EdgeInsets.symmetric(vertical: 224,horizontal: 20),
+            margin: EdgeInsets.symmetric(vertical: 224, horizontal: 20),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(12),
             ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 15,),
-            child: Text(
-              'Booking Info',
-              style: TextStyle(    decoration: TextDecoration.none,
-                  fontSize: 17,
-                  fontFamily: 'GR',
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: 10,left: 70,right: 70),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: Color(0xffE8E8E8),
-                width: 1
-              )
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 14,
-                  width: 28,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      color: Color(0xff398E5B)
+                  margin: EdgeInsets.symmetric(
+                    vertical: 15,
                   ),
-                  margin: EdgeInsets.fromLTRB(10, 8,30, 8),
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 7),
                   child: Text(
-                    'Booked',
-                    style: TextStyle(    decoration: TextDecoration.none,
-                        fontSize: 13,
+                    'Booking Info',
+                    style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontSize: 17,
                         fontFamily: 'GR',
                         color: Colors.black,
                         fontWeight: FontWeight.w600),
                   ),
                 ),
-
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: 10,left: 70,right: 70),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: Color(0xffE8E8E8),
-                width: 1
-              )
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
                 Container(
-                  height: 14,
-                  width: 28,
+                  margin: EdgeInsets.only(bottom: 10, left: 70, right: 70),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      color: Color(0xffFBBC0A)
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Color(0xffE8E8E8), width: 1)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 14,
+                        width: 28,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: Color(0xff398E5B)),
+                        margin: EdgeInsets.fromLTRB(10, 8, 30, 8),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 7),
+                        child: Text(
+                          'Booked',
+                          style: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontSize: 13,
+                              fontFamily: 'GR',
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ],
                   ),
-                  margin: EdgeInsets.fromLTRB(10, 8,30, 8),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 7),
-                  child: Text(
-                    'Enquiry',
-                    style: TextStyle(    decoration: TextDecoration.none,
-                        fontSize: 13,
-                        fontFamily: 'GR',
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ),
-
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: 10,left: 70,right: 70),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: Color(0xffE8E8E8),
-                width: 1
-              )
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  height: 14,
-                  width: 28,
+                  margin: EdgeInsets.only(bottom: 10, left: 70, right: 70),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      color: Color(0xffEF6C00)
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Color(0xffE8E8E8), width: 1)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 14,
+                        width: 28,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: Color(0xffFBBC0A)),
+                        margin: EdgeInsets.fromLTRB(10, 8, 30, 8),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 7),
+                        child: Text(
+                          'Enquiry',
+                          style: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontSize: 13,
+                              fontFamily: 'GR',
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ],
                   ),
-                  margin: EdgeInsets.fromLTRB(10, 8,30, 8),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 7),
-                  child: Text(
-                    'On Hold',
-                    style: TextStyle(    decoration: TextDecoration.none,
-                        fontSize: 13,
-                        fontFamily: 'GR',
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ),
-
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: 10,left: 70,right: 70),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: Color(0xffE8E8E8),
-                width: 1
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  height: 14,
-                  width: 28,
+                  margin: EdgeInsets.only(bottom: 10, left: 70, right: 70),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      border: Border.all(color: Color(0xff398E5B) ),
-                  ),
-                  margin: EdgeInsets.fromLTRB(10, 8,30, 8),
-                  child: Container(
-                    margin: EdgeInsets.symmetric(vertical: 3,horizontal: 10),
-                    height: 8,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10) ,
-                      color: Color(0xff15740D)
-                    ),
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Color(0xffE8E8E8), width: 1)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 14,
+                        width: 28,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: Color(0xffEF6C00)),
+                        margin: EdgeInsets.fromLTRB(10, 8, 30, 8),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 7),
+                        child: Text(
+                          'On Hold',
+                          style: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontSize: 13,
+                              fontFamily: 'GR',
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 7),
-                  child: Text(
-                    'Toke Received',
-                    style: TextStyle(    decoration: TextDecoration.none,
-                        fontSize: 13,
-                        fontFamily: 'GR',
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ),
-
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: 10,left: 70,right: 70),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: Color(0xffE8E8E8),
-                width: 1,
-              )
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  height: 14,
-                  width: 28,
+                  margin: EdgeInsets.only(bottom: 10, left: 70, right: 70),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      border: Border.all( color: Color(0xffEF6C00)),
-
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Color(0xffE8E8E8), width: 1),
                   ),
-                  margin: EdgeInsets.fromLTRB(10, 8,30, 8),
-                  child: Container(
-                    margin: EdgeInsets.symmetric(vertical: 3,horizontal: 10),
-                    height: 8,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10) ,
-                        color: Color(0xffEF0000)
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 14,
+                        width: 28,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          border: Border.all(color: Color(0xff398E5B)),
+                        ),
+                        margin: EdgeInsets.fromLTRB(10, 8, 30, 8),
+                        child: Container(
+                          margin:
+                              EdgeInsets.symmetric(vertical: 3, horizontal: 10),
+                          height: 8,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Color(0xff15740D)),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 7),
+                        child: Text(
+                          'Toke Received',
+                          style: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontSize: 13,
+                              fontFamily: 'GR',
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 7),
-                  child: Text(
-                    'Rescale',
-                    style: TextStyle(    decoration: TextDecoration.none,
-                        fontSize: 13,
-                        fontFamily: 'GR',
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600),
+                  margin: EdgeInsets.only(bottom: 10, left: 70, right: 70),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: Color(0xffE8E8E8),
+                        width: 1,
+                      )),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 14,
+                        width: 28,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          border: Border.all(color: Color(0xffEF6C00)),
+                        ),
+                        margin: EdgeInsets.fromLTRB(10, 8, 30, 8),
+                        child: Container(
+                          margin:
+                              EdgeInsets.symmetric(vertical: 3, horizontal: 10),
+                          height: 8,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Color(0xffEF0000)),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 7),
+                        child: Text(
+                          'Rescale',
+                          style: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontSize: 13,
+                              fontFamily: 'GR',
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-
               ],
             ),
-          ),
-              ],
-            ),
-
           ),
         );
       },
@@ -335,7 +320,6 @@ class _dashboardState extends State<dashboard> {
                           fontFamily: 'GB'),
                     ),
                   ),
-                  
                   Row(
                     children: [
                       Container(
@@ -369,13 +353,17 @@ class _dashboardState extends State<dashboard> {
                         ),
                       ),
                       GestureDetector(
-                        onTap: (){
-                          Navigator.of(context).pop();
-                          Navigator.of(context).push(_createRoute());
+                        onTap: () {
+                          Navigator.pop(context);
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  child: estimateScreen(),
+                                  type: PageTransitionType.rightToLeft));
+                          // Navigator.of(context).push(_createRoute());
                         },
                         child: Text('Estimates',
                             style: TextStyle(
-
                                 fontSize: 14,
                                 color: Color(0xff485056),
                                 fontFamily: 'GR',
@@ -395,12 +383,24 @@ class _dashboardState extends State<dashboard> {
                           onPressed: () {},
                         ),
                       ),
-                      Text('Task',
-                          style: TextStyle(
-                              fontSize: 14,
-                              color: Color(0xff485056),
-                              fontFamily: 'GR',
-                              fontWeight: FontWeight.bold)),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                duration: Duration(milliseconds: 700),
+                                  child: task_activity_Screen(),
+                                  type: PageTransitionType.rightToLeft));
+                          // Navigator.of(context).push(_createRoute());
+                        },
+                        child: Text('Task',
+                            style: TextStyle(
+                                fontSize: 14,
+                                color: Color(0xff485056),
+                                fontFamily: 'GR',
+                                fontWeight: FontWeight.bold)),
+                      ),
                     ],
                   ),
                   Row(
@@ -838,7 +838,6 @@ class _dashboardState extends State<dashboard> {
                                 )),
                             GestureDetector(
                               onTap: () {
-
                                 show_info();
                               },
                               child: Container(
@@ -918,59 +917,64 @@ class _dashboardState extends State<dashboard> {
                             ),
                           ],
                         ),
-
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)
-                          ),
-                          margin: EdgeInsets.only(left: 15,right: 15,bottom: 10),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)),
+                          margin:
+                              EdgeInsets.only(left: 15, right: 15, bottom: 10),
                           child: Container(
-                            margin: EdgeInsets.symmetric(vertical: 9,horizontal: 11),
+                            margin: EdgeInsets.symmetric(
+                                vertical: 9, horizontal: 11),
                             child: GridView.builder(
-                              shrinkWrap: true,
-                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisSpacing: 10,
-                                    crossAxisCount: 4,
+                                shrinkWrap: true,
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisSpacing: 10,
+                                  crossAxisCount: 4,
                                   childAspectRatio: 2,
                                 ),
                                 itemCount: myProducts.length,
                                 itemBuilder: (BuildContext ctx, index) {
                                   return Container(
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: Color(0xff007DEF )
-                                    ),
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Color(0xff007DEF)),
                                     child: Container(
-                                      decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: Colors.white,
-                                                blurRadius: 13,
-                                                spreadRadius: 25)
-                                          ]
-                                      ),
-                                        margin: EdgeInsets.symmetric(vertical: 9,horizontal: 18),
-                                        child: Text(myProducts[index],
-                                        style: TextStyle(fontSize: 12,fontFamily: 'GB',color: Color(0xff007DEF)),)),
+                                        decoration: BoxDecoration(boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.white,
+                                              blurRadius: 13,
+                                              spreadRadius: 25)
+                                        ]),
+                                        margin: EdgeInsets.symmetric(
+                                            vertical: 9, horizontal: 18),
+                                        child: Text(
+                                          myProducts[index],
+                                          style: TextStyle(
+                                              fontSize: 12,
+                                              fontFamily: 'GB',
+                                              color: Color(0xff007DEF)),
+                                        )),
                                   );
-                                }
-                            ),
+                                }),
                           ),
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)
-                          ),
-                          margin: EdgeInsets.only(left: 15,right: 15,bottom: 10),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)),
+                          margin:
+                              EdgeInsets.only(left: 15, right: 15, bottom: 10),
                           child: Container(
-                            margin: EdgeInsets.symmetric(vertical: 9,horizontal: 11),
+                            margin: EdgeInsets.symmetric(
+                                vertical: 9, horizontal: 11),
                             child: GridView.builder(
-                              shrinkWrap: true,
-                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisSpacing: 10,
-                                    crossAxisCount: 4,
+                                shrinkWrap: true,
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisSpacing: 10,
+                                  crossAxisCount: 4,
                                   mainAxisSpacing: 10,
                                   childAspectRatio: 2,
                                 ),
@@ -978,25 +982,26 @@ class _dashboardState extends State<dashboard> {
                                 itemBuilder: (BuildContext ctx, index) {
                                   return Container(
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-
-                                      color: Color(0xff007DEF )
-                                    ),
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Color(0xff007DEF)),
                                     child: Container(
-                                      decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: Colors.white,
-                                                blurRadius: 13,
-                                                spreadRadius: 25)
-                                          ]
-                                      ),
-                                        margin: EdgeInsets.symmetric(vertical: 9,horizontal: 18),
-                                        child: Text(myProducts2[index],
-                                        style: TextStyle(fontSize: 12,fontFamily: 'GB',color: Color(0xff007DEF)),)),
+                                        decoration: BoxDecoration(boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.white,
+                                              blurRadius: 13,
+                                              spreadRadius: 25)
+                                        ]),
+                                        margin: EdgeInsets.symmetric(
+                                            vertical: 9, horizontal: 18),
+                                        child: Text(
+                                          myProducts2[index],
+                                          style: TextStyle(
+                                              fontSize: 12,
+                                              fontFamily: 'GB',
+                                              color: Color(0xff007DEF)),
+                                        )),
                                   );
-                                }
-                            ),
+                                }),
                           ),
                         )
                       ],
