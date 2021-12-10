@@ -1,12 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tring/screens/authentication/login.dart';
+import 'package:tring/screens/initialization/dashboard_screen.dart';
 
-class project_preview extends StatefulWidget {
+class projectpreview extends StatefulWidget {
   @override
-  _project_previewState createState() => _project_previewState();
+  _projectpreviewState createState() => _projectpreviewState();
 }
 
-class _project_previewState extends State<project_preview> {
+class _projectpreviewState extends State<projectpreview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +30,7 @@ class _project_previewState extends State<project_preview> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Container(
-                          margin: EdgeInsets.only(left: 25, top: 40),
+                          margin: EdgeInsets.only(left: 25, top: 40,),
                           child: const Text(
                             'Project preview',
                             style: TextStyle(
@@ -42,14 +44,17 @@ class _project_previewState extends State<project_preview> {
                             borderRadius: BorderRadius.circular(8),
                             color: Colors.white,
                           ),
-                          margin: EdgeInsets.only(top: 30, left: 38, right: 38),
+                          margin: EdgeInsets.only(
+                              top: 30, left: 38, right: 38),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisAlignment:
+                                MainAxisAlignment.spaceAround,
                             children: [
-                              Text('Total flats:'),
+                              Text('Total Flats:',style: TextStyle(color: Color(0xff007DEF),fontFamily: 'GB',fontWeight: FontWeight.normal),),
                               Container(
-                                  margin: EdgeInsets.symmetric(vertical: 13),
-                                  child: Text('150'))
+                                  margin: EdgeInsets.symmetric(
+                                      vertical: 13),
+                                  child: Text('150',style: TextStyle(color: Color(0xff007DEF),fontFamily: 'GB',fontWeight: FontWeight.normal)))
                             ],
                           ),
                         ),
@@ -64,102 +69,134 @@ class _project_previewState extends State<project_preview> {
                         SingleChildScrollView(
                             scrollDirection: Axis.vertical,
                             child: Container(
-                                margin:
-                                    EdgeInsets.only(left: 0, right: 0, top: 0),
-                                child:
-                                    Wrap(direction: Axis.horizontal, children: [
-                                  for (var index = 0; index < 7; index++) ...{
-                                    GestureDetector(
-                                      onTap: () {
-                                        print(index);
-                                      },
-                                      child: Container(
-                                        margin: EdgeInsets.only(
-                                            left: 38, top: 15, right: 38),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                                color: Colors.white,
-                                              ),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Container(
-                                                      margin:
-                                                          EdgeInsets.fromLTRB(
-                                                              38, 9, 19, 9),
-                                                      child: Text(
-                                                        'A:',
-                                                        style: TextStyle(
-                                                            fontSize: 13),
-                                                      )),
-                                                  Container(
-                                                      margin:
-                                                          EdgeInsets.fromLTRB(
-                                                              19, 9, 33, 9),
-                                                      child: Text(
-                                                        '25',
-                                                        style: TextStyle(
-                                                            fontSize: 13),
-                                                      ))
-                                                ],
-                                              ),
+                                margin: EdgeInsets.only(
+                                    left: 0, right: 0, top: 0),
+                                child: Wrap(
+                                    direction: Axis.horizontal,
+                                    children: [
+                                      for (var index = 0;
+                                          index < 7;
+                                          index++) ...{
+                                        GestureDetector(
+                                          onTap: () {
+                                            print(index);
+                                          },
+                                          child: Container(
+                                            margin: EdgeInsets.only(
+                                                left: 38,
+                                                top: 15,
+                                                right: 38),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Container(
+                                                  decoration:
+                                                      BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius
+                                                            .circular(
+                                                                8),
+                                                    color:
+                                                        Colors.white,
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Container(
+                                                          margin: EdgeInsets
+                                                              .fromLTRB(
+                                                                  38,
+                                                                  9,
+                                                                  19,
+                                                                  9),
+                                                          child: Text(
+                                                            'A:',
+                                                            style: TextStyle(
+                                                                fontSize:
+                                                                    13),
+                                                          )),
+                                                      Container(
+                                                          margin: EdgeInsets
+                                                              .fromLTRB(
+                                                                  19,
+                                                                  9,
+                                                                  33,
+                                                                  9),
+                                                          child: const Text(
+                                                            '25',
+                                                            style: TextStyle(fontSize:
+                                                            13,color: Color(0xff007DEF),fontFamily: 'GB',fontWeight: FontWeight.normal),
+                                                          ))
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  decoration:
+                                                      BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius
+                                                            .circular(
+                                                                8),
+                                                    color:
+                                                        Colors.white,
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Container(
+                                                          margin: EdgeInsets
+                                                              .fromLTRB(
+                                                                  38,
+                                                                  9,
+                                                                  19,
+                                                                  9),
+                                                          child: Text(
+                                                            'A:',
+                                                            style: TextStyle(
+                                                                fontSize:
+                                                                    13),
+                                                          )),
+                                                      Container(
+                                                          margin: const EdgeInsets
+                                                              .fromLTRB(
+                                                                  19,
+                                                                  9,
+                                                                  33,
+                                                                  9),
+                                                          child: const Text(
+                                                            '25',style: TextStyle(fontSize:
+                            13,color: Color(0xff007DEF),fontFamily: 'GB',fontWeight: FontWeight.normal)
+
+                                                          ))
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
                                             ),
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                                color: Colors.white,
-                                              ),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Container(
-                                                      margin:
-                                                          EdgeInsets.fromLTRB(
-                                                              38, 9, 19, 9),
-                                                      child: Text(
-                                                        'A:',
-                                                        style: TextStyle(
-                                                            fontSize: 13),
-                                                      )),
-                                                  Container(
-                                                      margin:
-                                                          EdgeInsets.fromLTRB(
-                                                              19, 9, 33, 9),
-                                                      child: Text(
-                                                        '25',
-                                                        style: TextStyle(
-                                                            fontSize: 13),
-                                                      ))
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    )
-                                  }
-                                ]))),
+                                          ),
+                                        )
+                                      }
+                                    ]))),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
                               margin: const EdgeInsets.only(
                                   right: 10, top: 30, bottom: 30),
-                              height: 50,
+                              height: 32,
                               decoration: BoxDecoration(
                                   color: const Color(0xfff3f3f3),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius:
+                                      BorderRadius.circular(8.0),
                                   border: Border.all(
-                                      width: 1, color: Color(0xff007DEF))),
+                                      width: 1,
+                                      color: Color(0xff007DEF))),
                               child: Container(
                                 margin: const EdgeInsets.symmetric(
                                     horizontal: 28, vertical: 9),
@@ -178,22 +215,24 @@ class _project_previewState extends State<project_preview> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => loginScreen()));
+                                        builder: (context) =>
+                                            dashboard()));
                               },
                               child: Container(
                                 margin: const EdgeInsets.only(
                                     top: 30, bottom: 30, left: 10),
-                                height: 50,
+                                height: 32,
                                 decoration: BoxDecoration(
                                   color: const Color(0xff007DEF),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius:
+                                      BorderRadius.circular(8.0),
                                 ),
                                 child: Container(
                                   margin: EdgeInsets.symmetric(
                                       horizontal: 28, vertical: 9),
                                   alignment: Alignment.center,
                                   child: const Text(
-                                    'Next',
+                                    'Done',
                                     style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.bold,

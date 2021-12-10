@@ -42,6 +42,9 @@ dependencies:
   country_code_picker: ^2.0.2
   numberpicker: ^2.1.1
   flutter_spinbox: ^0.7.0
+  flutter_svg: ^1.0.0
+  flutter_screenutil: ^5.0.1
+  page_transition: ^2.0.4
 
 
 dev_dependencies:
@@ -76,6 +79,11 @@ flutter:
       - family: GSB
         fonts:
           - asset: assets1/fonts/Gilroy-SemiBold.ttf
+
+      - family: GR
+        fonts:
+          - asset: assets1/fonts/Gilroy-Regular.ttf
+
 
 
   #   - family: Trajan Pro
