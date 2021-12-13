@@ -46,6 +46,8 @@ dependencies:
   flutter_screenutil: ^5.0.1
   page_transition: ^2.0.4
   auto_size_text_field: ^1.0.1
+  dropdown_below: ^1.0.2
+  dropdown_button2: ^1.0.7
 
 
 dev_dependencies:
