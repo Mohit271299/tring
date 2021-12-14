@@ -145,9 +145,7 @@ class _task_activity_ScreenState extends State<task_activity_Screen> {
                           margin: EdgeInsets.only(top: 15, bottom: 15),
                           child: DropdownButtonHideUnderline(
                             child: DropdownButton<String>(
-                              dropdownColor: Colors.transparent,
                               iconEnabledColor: Color(0xff007DEF),
-                              elevation: 0,
                               iconSize: 14,
                               underline: SizedBox(),
                               value: _user == null ? null : list_tasks[_user],
@@ -165,24 +163,19 @@ class _task_activity_ScreenState extends State<task_activity_Screen> {
                               items: list_tasks.map((String value) {
                                 return DropdownMenuItem<String>(
                                   child: Container(
-                                    color: Color(0xff9d9d9d),
+                                    decoration: BoxDecoration(
+                                        color: Color(0xfff3f3f3),
+                                        borderRadius: BorderRadius.circular(8)),
                                     child: Container(
-                                      margin: EdgeInsets.symmetric(
-                                          vertical: 3, horizontal: 5),
-                                      decoration: BoxDecoration(
-                                          color: Color(0xfff3f3f3),
-                                          borderRadius: BorderRadius.circular(8)),
-                                      child: Container(
-                                        margin: EdgeInsets.only(
-                                            left: 5, top: 12, bottom: 12),
-                                        width: MediaQuery.of(context).size.width,
-                                        child: Text(
-                                          value,
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontFamily: 'GR',
-                                              fontWeight: FontWeight.w600),
-                                        ),
+                                      margin: EdgeInsets.only(
+                                          left: 5, top: 12, bottom: 12),
+                                      width: MediaQuery.of(context).size.width,
+                                      child: Text(
+                                        value,
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            fontFamily: 'GR',
+                                            fontWeight: FontWeight.w600),
                                       ),
                                     ),
                                   ),

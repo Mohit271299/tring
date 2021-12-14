@@ -2006,7 +2006,6 @@ class _estimate_detailsState extends State<estimate_details> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-
                                 Container(
                                     decoration: BoxDecoration(
                                         color: Color(0xffF3F3F3),

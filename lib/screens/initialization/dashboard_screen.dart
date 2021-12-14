@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:tring/screens/initialization/add_customer.dart';
 import 'package:tring/screens/initialization/estimate_screen.dart';
+import 'package:tring/screens/initialization/sales_screen.dart';
 import 'package:tring/screens/initialization/task_activity_screen.dart';
 
 class dashboard extends StatefulWidget {
@@ -364,12 +365,23 @@ class _dashboardState extends State<dashboard> {
                           onPressed: () {},
                         ),
                       ),
-                      Text('Sales',
-                          style: TextStyle(
-                              fontSize: 14,
-                              color: Color(0xff485056),
-                              fontFamily: 'GR',
-                              fontWeight: FontWeight.bold)),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  child: salesScreen(),
+                                  type: PageTransitionType.rightToLeft));
+                          // Navigator.of(context).push(_createRoute());
+                        },
+                        child: Text('Sales',
+                            style: TextStyle(
+                                fontSize: 14,
+                                color: Color(0xff485056),
+                                fontFamily: 'GR',
+                                fontWeight: FontWeight.bold)),
+                      ),
                     ],
                   ),
                   Row(
@@ -467,12 +479,24 @@ class _dashboardState extends State<dashboard> {
                           onPressed: () {},
                         ),
                       ),
-                      Text('Activity',
-                          style: TextStyle(
-                              fontSize: 14,
-                              color: Color(0xff485056),
-                              fontFamily: 'GR',
-                              fontWeight: FontWeight.bold)),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  duration: Duration(milliseconds: 700),
+                                  child: task_activity_Screen(),
+                                  type: PageTransitionType.rightToLeft));
+                          // Navigator.of(context).push(_createRoute());
+                        },
+                        child: Text('Activity',
+                            style: TextStyle(
+                                fontSize: 14,
+                                color: Color(0xff485056),
+                                fontFamily: 'GR',
+                                fontWeight: FontWeight.bold)),
+                      ),
                     ],
                   ),
                   Row(
@@ -1213,14 +1237,18 @@ class _dashboardState extends State<dashboard> {
                       ],
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(right: 12),
-                    child:GestureDetector(
-                      onTap: edit_options,
-                      child: SvgPicture.asset(
+                  GestureDetector(
+                    onTap: edit_options,
+                    child: Container(
+                      // color: Colors.redAccent,
+                      width: 20,
+                      height: 30,
+                      margin: EdgeInsets.only(right: 12),
+                      child:SvgPicture.asset(
                         'assets1/Vector_three_dot.svg',
-                        width: 15,
+                        width: 12,
                         height: 12,
+                        fit: BoxFit.none,
                       ),
                     ),
                   ),
@@ -1309,7 +1337,8 @@ class _dashboardState extends State<dashboard> {
                           style: TextStyle(
                               fontSize: 12,
                               fontFamily: 'GB',
-                              color: Color(0xff007DEF)),
+                              color: Color(0xff007DEF)
+                          ),
                         )),
                   );
                 }),
